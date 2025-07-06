@@ -26,7 +26,7 @@ defmodule Pigpiox.Port do
   defp start_pigpiod do
     _ = Logger.debug("Pigpiox.Port: starting pigpiod")
     path = System.find_executable("pigpiod")
-    # Port.open({:spawn_executable, path}, [:binary, :exit_status, args: ["-g", "-x", "-1"]])
+    Port.open({:spawn_executable, path}, [:binary, :exit_status, args: ["-g", "-x", "-1"]])
     :ok
   end
 
